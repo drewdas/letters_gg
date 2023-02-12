@@ -19,7 +19,8 @@ CHUNK_SIZE_LIMIT = 600
 
 def construct_index(input_directory, output_path):
     llm_predictor = LLMPredictor(llm=OpenAI(
-        temperature=0, model_name="text-davinci-003", max_tokens=NUM_OUTPUTS))
+        temperature=0, model_name="text-davinci-003",
+        max_tokens=NUM_OUTPUTS))  # type: ignore
     prompt_helper = PromptHelper(MAX_INPUT_SIZE,
                                  NUM_OUTPUTS,
                                  MAX_CHUNK_OVERLAP,
